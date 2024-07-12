@@ -1,0 +1,40 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="submitForm()">
+  <div class="checkout-container">
+    <div class="checkout-item" *ngFor="let item of cartItems">
+      <div class="checkout-item-quantity">{{ item.quantity }}x</div>
+      <img class="checkout-item-thumbnail" [src]="item.thumbnail" alt="{{ item.name }}">
+      <div class="checkout-item-name">{{ item.name }}</div>
+      <div class="checkout-item-price">{{ item.price | currency }}</div>
+    </div>
+    <div class="checkout-total">Total: {{ totalPrice | currency }}</div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" formControlName="name" class="form-control" />
+      <div *ngIf="checkoutForm.controls['name'].invalid && (checkoutForm.controls['name'].dirty || checkoutForm.controls['name'].touched)">
+        <small class="text-danger">Name is required and must contain only letters.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" id="address" formControlName="address" class="form-control" />
+      <div *ngIf="checkoutForm.controls['address'].invalid && (checkoutForm.controls['address'].dirty || checkoutForm.controls['address'].touched)">
+        <small class="text-danger">Address is required.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" class="form-control" />
+      <div *ngIf="checkoutForm.controls['email'].invalid && (checkoutForm.controls['email'].dirty || checkoutForm.controls['email'].touched)">
+        <small class="text-danger">A valid email is required.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" formControlName="phone" class="form-control" />
+      <div *ngIf="checkoutForm.controls['phone'].invalid && (checkoutForm.controls['phone'].dirty || checkoutForm.controls['phone'].touched)">
+        <small class="text-danger">A valid phone number is required.</small>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Buy</button>
+  </div>
+</form>

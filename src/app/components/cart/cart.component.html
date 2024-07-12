@@ -1,0 +1,18 @@
+<div class="cart-container">
+  <div class="cart-item" *ngFor="let item of cartItems">
+    <div class="cart-item-quantity">{{ item.quantity }}x </div>
+    <div class="cart-item-thumbnail">
+      <img [src]="item.thumbnail" alt="{{ item.name }}">
+    </div>
+    <div class="cart-item-details">
+      <div class="cart-item-name">{{ item.name }}</div>
+      <div class="cart-item-price">{{ item.price | currency }}</div>
+      <div class="cart-item-quantity">
+        <input type="number" [(ngModel)]="item.quantity" (ngModelChange)="adjustQuantity(item.id, item.quantity)">
+      </div>
+      <button class="btn btn-danger" (click)="removeFromCart(item.id)">Remove</button>
+    </div>
+  </div>
+  <div class="cart-total">Total: {{ getTotalPrice() | currency }}</div>
+  <button class="btn btn-primary" (click)="openCheckout()">Checkout</button>
+</div>

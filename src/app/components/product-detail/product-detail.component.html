@@ -1,0 +1,9 @@
+<div class="product-detail-container" *ngIf="loading">Loading...</div>
+<div class="product-detail-container" *ngIf="!loading">
+  <h2>{{ product.title }}</h2>
+  <img class="product-image" [src]="product.thumbnail" alt="{{ product.title }}" />
+  <p>{{ product.description }}</p>
+  <p class="product-price">{{ product.price | currency: 'EUR':'symbol':'1.2-2' }}</p>
+  <p class="product-stock">Stock: {{ product.stock }}</p>
+  <button class="btn btn-secondary" (click)="activeModal.close()">Close</button>
+</div>

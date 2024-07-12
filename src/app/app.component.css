@@ -1,0 +1,20 @@
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: #ffffff;
+  }
+  
+  .cart-button {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+  }
+  
+  .cart-button:hover {
+    background-color: #ffffff;
+    color: #343a40;
+  }
+  

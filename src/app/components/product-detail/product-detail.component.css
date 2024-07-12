@@ -1,0 +1,29 @@
+.product-detail-container {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  .product-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #28a745;
+  }
+  
+  .product-stock {
+    font-size: 1em;
+    color: #6c757d;
+  }
+  
+  .btn-secondary {
+    margin-top: 15px;
+  }
+  
